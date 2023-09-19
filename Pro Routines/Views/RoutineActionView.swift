@@ -6,21 +6,51 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct RoutineActionView: View {
     @Binding var routine: ProRoutine
+    @StateObject var taskRunners = Watchdog()
+    
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    
+    private var totalSeconds: Int {
+        taskRunners.secondsElapsed + taskRunners.secondsRemaining
+    }
+    
+    private var progress: Double {
+        guard totalSeconds > 0 else { return 1 }
+        return Double(taskRunners.secondsElapsed) / Double(totalSeconds)
+    }
+    
+    private var minutesRemaining: Int {
+        taskRunners.secondsRemaining / 60
+    }
+    
+    private var runnerNumber: Int? {
+        guard let index = taskRunners.runners.firstIndex(where: { !$0.isCompleted }) else { return nil }
+        return index + 1
+    }
+    
+    private var isLastRunner: Bool {
+        return taskRunners.runners.dropLast().allSatisfy { $0.isCompleted }
+    }
+    
+    private var runnerText: String {
+        guard let runnerNumber = runnerNumber else { return "No more tasks" }
+        return "Task \(runnerNumber) of \(taskRunners.runners.count)"
+    }
     
     var body: some View {
         VStack {
-            Text("Hello, world! This is Pro Routine!")
-            ProgressView(value: 10, total: 15)
+            ProgressView(value: progress)
             HStack {
                 VStack(alignment: .leading) {
-                    Label("0:00", systemImage: "hourglass.tophalf.filled")
+                    Label("\(taskRunners.secondsElapsed)", systemImage: "hourglass.tophalf.filled")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Label("0:00", systemImage: "hourglass.bottomhalf.filled")
+                    Label("\(taskRunners.secondsRemaining)", systemImage: "hourglass.bottomhalf.filled")
                 }
             }
             .accessibilityElement(children: .ignore)
@@ -28,17 +58,36 @@ struct RoutineActionView: View {
             .accessibilityValue("0 minutes")
             Circle()
                 .strokeBorder(lineWidth: 24)
-            HStack {
-                Text("Task 1")
-                Spacer()
-                Button(action: {}) {
-                    Image(systemName: "forward.fill")
+            
+            if isLastRunner {
+                Text("Last Task")
+            } else {
+                HStack {
+                    Text(runnerText)
+                    Spacer()
+                    Button(action: {
+                        taskRunners.skipRunner()
+                    }) {
+                        Image(systemName: "forward.fill")
+                    }
+                    .accessibilityLabel("Next Task")
                 }
-                .accessibilityLabel("Next Task")
             }
+            
         }
         .padding()
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            taskRunners.reset(lengthInMinutes: routine.lengthInMinutes, tasks: routine.tasks)
+            taskRunners.runnerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
+            taskRunners.startRunning()
+        }
+        .onDisappear {
+            taskRunners.stopRunning()
+        }
     }
 }
 
