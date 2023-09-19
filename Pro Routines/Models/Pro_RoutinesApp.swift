@@ -11,7 +11,7 @@ import SwiftUI
 struct Pro_RoutinesApp: App {
     var body: some Scene {
         WindowGroup {
-            RoutineActionView()
+            RoutinesListView(routines: ProRoutine.sampleData)
         }
     }
 }

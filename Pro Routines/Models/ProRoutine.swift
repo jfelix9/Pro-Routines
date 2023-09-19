@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct ProRoutine {
+struct ProRoutine: Identifiable {
+    let id: UUID
     var title: String
     var tasks: [String]
     var lengthInMinutes: Int
     var theme: Theme
+    
+    init(id: UUID = UUID(), title: String, tasks: [String], lengthInMinutes: Int, theme: Theme) {
+        self.id = id
+        self.title = title
+        self.tasks = tasks
+        self.lengthInMinutes = lengthInMinutes
+        self.theme = theme
+    }
 }
 
 
