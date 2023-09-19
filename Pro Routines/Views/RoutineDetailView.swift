@@ -16,7 +16,7 @@ struct RoutineDetailView: View {
     var body: some View {
         List {
             Section {
-                NavigationLink(destination: RoutineActionView()) {
+                NavigationLink(destination: RoutineActionView(routine: $routine)) {
                     Label("Start Routine", systemImage: "timer")
                         .font(.headline)
                 }

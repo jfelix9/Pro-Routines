@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RoutineActionView.swift
 //  Pro Routines
 //
 //  Created by Jorge Felix on 9/19/23.
@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RoutineActionView: View {
+    @Binding var routine: ProRoutine
+    
     var body: some View {
         VStack {
             Text("Hello, world! This is Pro Routine!")
@@ -36,11 +38,12 @@ struct RoutineActionView: View {
             }
         }
         .padding()
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct RoutineActionView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineActionView()
+        RoutineActionView(routine: .constant(ProRoutine.sampleData[0]))
     }
 }
