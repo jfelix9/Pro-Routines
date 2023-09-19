@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Pro_RoutinesApp: App {
+    @State private var routines = ProRoutine.sampleData
+    
     var body: some Scene {
         WindowGroup {
-            RoutinesListView(routines: ProRoutine.sampleData)
+            RoutinesListView(routines: $routines)
         }
     }
 }

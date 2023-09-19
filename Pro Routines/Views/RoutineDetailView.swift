@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct RoutineDetailView: View {
-    let routine: ProRoutine
+    @Binding var routine: ProRoutine
+    
+    @State private var isPresentingEditView = false
+    @State private var editingRoutine = ProRoutine.emptyRoutine
     
     var body: some View {
         List {
@@ -38,13 +41,38 @@ struct RoutineDetailView: View {
             }
         }
         .navigationTitle(routine.title)
+        .toolbar {
+            Button("Edit") {
+                isPresentingEditView = true
+                editingRoutine = routine
+            }
+        }
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationStack {
+                RoutineConfigView(routine: $editingRoutine)
+                    .navigationTitle(routine.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                                routine = editingRoutine
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 
 struct RoutineDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            RoutineDetailView(routine: ProRoutine.sampleData[0])
+            RoutineDetailView(routine: .constant(ProRoutine.sampleData[0]))
         }
     }
 }

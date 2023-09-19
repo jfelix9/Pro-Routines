@@ -12,6 +12,14 @@ struct ProRoutine: Identifiable {
     var title: String
     var tasks: [Task]
     var lengthInMinutes: Int
+    var lengthInMinutesAsDouble: Double {
+        get {
+            Double(lengthInMinutes)
+        }
+        set {
+            lengthInMinutes = Int(newValue)
+        }
+    }
     var theme: Theme
     
     init(id: UUID = UUID(), title: String, tasks: [String], lengthInMinutes: Int, theme: Theme) {
@@ -35,6 +43,9 @@ extension ProRoutine {
     }
 }
 
+extension ProRoutine {
+    static let emptyRoutine: ProRoutine = ProRoutine(title: "", tasks: [], lengthInMinutes: 5, theme: .morning)
+}
 
 extension ProRoutine {
     static let sampleData: [ProRoutine] =

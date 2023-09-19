@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct RoutinesListView: View {
-    let routines: [ProRoutine]
+    @Binding var routines: [ProRoutine]
     
     var body: some View {
         NavigationStack {
-            List(routines) { i in
-                NavigationLink(destination: RoutineDetailView(routine: i)) {
+            List($routines) { $i in
+                NavigationLink(destination: RoutineDetailView(routine: $i)) {
                     RoutinePreView(routine: i)
                 }
                 .listRowBackground(i.theme.mainColor)
@@ -33,6 +33,6 @@ struct RoutinesListView: View {
 
 struct RoutinesListView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutinesListView(routines: ProRoutine.sampleData)
+        RoutinesListView(routines: .constant(ProRoutine.sampleData))
     }
 }

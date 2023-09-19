@@ -16,6 +16,7 @@
 		76C4A56A2ABA131400359FA8 /* RoutinePreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A5692ABA131400359FA8 /* RoutinePreView.swift */; };
 		76C4A56C2ABA173400359FA8 /* RoutinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A56B2ABA173400359FA8 /* RoutinesListView.swift */; };
 		76C4A56E2ABA1B7000359FA8 /* RoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A56D2ABA1B7000359FA8 /* RoutineDetailView.swift */; };
+		76C4A5702ABA264900359FA8 /* RoutineConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		76C4A5692ABA131400359FA8 /* RoutinePreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePreView.swift; sourceTree = "<group>"; };
 		76C4A56B2ABA173400359FA8 /* RoutinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesListView.swift; sourceTree = "<group>"; };
 		76C4A56D2ABA1B7000359FA8 /* RoutineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailView.swift; sourceTree = "<group>"; };
+		76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				76C4A5692ABA131400359FA8 /* RoutinePreView.swift */,
 				76C4A56B2ABA173400359FA8 /* RoutinesListView.swift */,
 				76C4A56D2ABA1B7000359FA8 /* RoutineDetailView.swift */,
+				76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76C4A5652ABA0FF900359FA8 /* Theme.swift in Sources */,
+				76C4A5702ABA264900359FA8 /* RoutineConfigView.swift in Sources */,
 				76C4A56C2ABA173400359FA8 /* RoutinesListView.swift in Sources */,
 				76C4A56A2ABA131400359FA8 /* RoutinePreView.swift in Sources */,
 				76C4A56E2ABA1B7000359FA8 /* RoutineDetailView.swift in Sources */,
