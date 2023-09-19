@@ -17,6 +17,10 @@
 		76C4A56C2ABA173400359FA8 /* RoutinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A56B2ABA173400359FA8 /* RoutinesListView.swift */; };
 		76C4A56E2ABA1B7000359FA8 /* RoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A56D2ABA1B7000359FA8 /* RoutineDetailView.swift */; };
 		76C4A5702ABA264900359FA8 /* RoutineConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */; };
+		76C4A5722ABA363600359FA8 /* Watchdog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A5712ABA363600359FA8 /* Watchdog.swift */; };
+		76C4A5742ABA424100359FA8 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A5732ABA424100359FA8 /* AVPlayer+Ding.swift */; };
+		76C4A5772ABA43FE00359FA8 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76C4A5762ABA43FE00359FA8 /* ding.wav */; };
+		76C4A57A2ABA441600359FA8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76C4A5792ABA441600359FA8 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		76C4A56B2ABA173400359FA8 /* RoutinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesListView.swift; sourceTree = "<group>"; };
 		76C4A56D2ABA1B7000359FA8 /* RoutineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailView.swift; sourceTree = "<group>"; };
 		76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineConfigView.swift; sourceTree = "<group>"; };
+		76C4A5712ABA363600359FA8 /* Watchdog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchdog.swift; sourceTree = "<group>"; };
+		76C4A5732ABA424100359FA8 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
+		76C4A5762ABA43FE00359FA8 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		76C4A5792ABA441600359FA8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 		76C4A5492ABA04A000359FA8 = {
 			isa = PBXGroup;
 			children = (
+				76C4A5782ABA441600359FA8 /* LICENSE */,
 				76C4A5542ABA04A000359FA8 /* Pro Routines */,
 				76C4A5532ABA04A000359FA8 /* Products */,
 			);
@@ -63,6 +72,7 @@
 		76C4A5542ABA04A000359FA8 /* Pro Routines */ = {
 			isa = PBXGroup;
 			children = (
+				76C4A5752ABA43FE00359FA8 /* Resources */,
 				76C4A5632ABA0FE000359FA8 /* Models */,
 				76C4A5682ABA12FB00359FA8 /* Views */,
 				76C4A5592ABA04A100359FA8 /* Assets.xcassets */,
@@ -85,6 +95,8 @@
 				76C4A5552ABA04A000359FA8 /* Pro_RoutinesApp.swift */,
 				76C4A5642ABA0FF900359FA8 /* Theme.swift */,
 				76C4A5662ABA117100359FA8 /* ProRoutine.swift */,
+				76C4A5712ABA363600359FA8 /* Watchdog.swift */,
+				76C4A5732ABA424100359FA8 /* AVPlayer+Ding.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +111,22 @@
 				76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		76C4A5752ABA43FE00359FA8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76C4A5762ABA43FE00359FA8 /* ding.wav */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		76C4A5782ABA441600359FA8 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				76C4A5792ABA441600359FA8 /* LICENSE.txt */,
+			);
+			path = LICENSE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +187,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C4A57A2ABA441600359FA8 /* LICENSE.txt in Resources */,
+				76C4A5772ABA43FE00359FA8 /* ding.wav in Resources */,
 				76C4A55D2ABA04A100359FA8 /* Preview Assets.xcassets in Resources */,
 				76C4A55A2ABA04A100359FA8 /* Assets.xcassets in Resources */,
 			);
@@ -175,10 +205,12 @@
 				76C4A5702ABA264900359FA8 /* RoutineConfigView.swift in Sources */,
 				76C4A56C2ABA173400359FA8 /* RoutinesListView.swift in Sources */,
 				76C4A56A2ABA131400359FA8 /* RoutinePreView.swift in Sources */,
+				76C4A5722ABA363600359FA8 /* Watchdog.swift in Sources */,
 				76C4A56E2ABA1B7000359FA8 /* RoutineDetailView.swift in Sources */,
 				76C4A5582ABA04A000359FA8 /* RoutineActionView.swift in Sources */,
 				76C4A5672ABA117100359FA8 /* ProRoutine.swift in Sources */,
 				76C4A5562ABA04A000359FA8 /* Pro_RoutinesApp.swift in Sources */,
+				76C4A5742ABA424100359FA8 /* AVPlayer+Ding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
