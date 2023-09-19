@@ -11,9 +11,22 @@ struct RoutinesListView: View {
     let routines: [ProRoutine]
     
     var body: some View {
-        List(routines) {
-            RoutinePreView(routine: $0)
-                .listRowBackground($0.theme.mainColor)
+        NavigationStack {
+            List(routines) { i in
+                NavigationLink(destination: RoutineDetailView(routine: i)) {
+                    RoutinePreView(routine: i)
+                }
+                .listRowBackground(i.theme.mainColor)
+            }
+            .navigationTitle("Routines")
+            .toolbar {
+                Button(action: {
+                    // TODO: add function to add routine to routines array
+                }) {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("add new routine")
+            }
         }
     }
 }
