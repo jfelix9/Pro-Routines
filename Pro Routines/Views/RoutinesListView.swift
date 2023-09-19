@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RoutinesListView: View {
     @Binding var routines: [ProRoutine]
+    @State private var isPresentingNewScrumView = false
     
     var body: some View {
         NavigationStack {
@@ -21,12 +22,15 @@ struct RoutinesListView: View {
             .navigationTitle("Routines")
             .toolbar {
                 Button(action: {
-                    // TODO: add function to add routine to routines array
+                    isPresentingNewScrumView = true
                 }) {
                     Image(systemName: "plus")
                 }
                 .accessibilityLabel("add new routine")
             }
+        }
+        .sheet(isPresented: $isPresentingNewScrumView) {
+            NewRoutineSheet(routines: $routines, isPresentingNewRoutineView: $isPresentingNewScrumView)
         }
     }
 }

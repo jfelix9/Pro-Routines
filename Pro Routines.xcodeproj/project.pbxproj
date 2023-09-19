@@ -21,6 +21,7 @@
 		76C4A5742ABA424100359FA8 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A5732ABA424100359FA8 /* AVPlayer+Ding.swift */; };
 		76C4A5772ABA43FE00359FA8 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76C4A5762ABA43FE00359FA8 /* ding.wav */; };
 		76C4A57A2ABA441600359FA8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76C4A5792ABA441600359FA8 /* LICENSE.txt */; };
+		76C4A57C2ABA463800359FA8 /* NewRoutineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4A57B2ABA463800359FA8 /* NewRoutineSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		76C4A5732ABA424100359FA8 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		76C4A5762ABA43FE00359FA8 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		76C4A5792ABA441600359FA8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		76C4A57B2ABA463800359FA8 /* NewRoutineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				76C4A5572ABA04A000359FA8 /* RoutineActionView.swift */,
 				76C4A5692ABA131400359FA8 /* RoutinePreView.swift */,
 				76C4A56B2ABA173400359FA8 /* RoutinesListView.swift */,
+				76C4A57B2ABA463800359FA8 /* NewRoutineSheet.swift */,
 				76C4A56D2ABA1B7000359FA8 /* RoutineDetailView.swift */,
 				76C4A56F2ABA264900359FA8 /* RoutineConfigView.swift */,
 			);
@@ -204,6 +207,7 @@
 				76C4A5652ABA0FF900359FA8 /* Theme.swift in Sources */,
 				76C4A5702ABA264900359FA8 /* RoutineConfigView.swift in Sources */,
 				76C4A56C2ABA173400359FA8 /* RoutinesListView.swift in Sources */,
+				76C4A57C2ABA463800359FA8 /* NewRoutineSheet.swift in Sources */,
 				76C4A56A2ABA131400359FA8 /* RoutinePreView.swift in Sources */,
 				76C4A5722ABA363600359FA8 /* Watchdog.swift in Sources */,
 				76C4A56E2ABA1B7000359FA8 /* RoutineDetailView.swift in Sources */,
