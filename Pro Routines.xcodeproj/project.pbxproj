@@ -80,6 +80,7 @@
 		76C4A5542ABA04A000359FA8 /* Pro Routines */ = {
 			isa = PBXGroup;
 			children = (
+				76C4A5552ABA04A000359FA8 /* Pro_RoutinesApp.swift */,
 				76C4A5752ABA43FE00359FA8 /* Resources */,
 				76C4A5632ABA0FE000359FA8 /* Models */,
 				76C4A5682ABA12FB00359FA8 /* Views */,
@@ -101,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				7623FA1D2ABCC5AB003D25FD /* ErrorWrapper.swift */,
-				76C4A5552ABA04A000359FA8 /* Pro_RoutinesApp.swift */,
 				76C4A5642ABA0FF900359FA8 /* Theme.swift */,
 				76C4A5662ABA117100359FA8 /* ProRoutine.swift */,
 				76B994A92ABCAA26007675E6 /* Store.swift */,
