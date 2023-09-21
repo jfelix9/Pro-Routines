@@ -30,7 +30,7 @@ struct RoutineConfigView: View {
                     }
                 }
             }
-            Section(header: Text("Attendees")) {
+            Section(header: Text("Tasks")) {
                 ForEach(routine.tasks) { t in
                     Text(t.name)
                 }
@@ -38,7 +38,7 @@ struct RoutineConfigView: View {
                     routine.tasks.remove(atOffsets: i)
                 }
                 HStack {
-                    TextField("New Attendee", text: $newTaskName)
+                    TextField("New Task", text: $newTaskName)
                     Button(action: {
                         withAnimation {
                             let newTask = ProRoutine.Task(name: newTaskName)
@@ -48,7 +48,7 @@ struct RoutineConfigView: View {
 
                     }) {
                         Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel("Add attendee")
+                            .accessibilityLabel("Add task")
                     }
                     .disabled(newTaskName.isEmpty)
 

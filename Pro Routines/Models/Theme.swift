@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Theme: String, CaseIterable {
+enum Theme: String, CaseIterable, Codable {
     case morning
     case night
     case scrum

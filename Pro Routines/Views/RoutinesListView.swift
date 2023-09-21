@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RoutinesListView: View {
     @Binding var routines: [ProRoutine]
+    @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewScrumView = false
+    let saveAction: () -> Void
     
     var body: some View {
         NavigationStack {
@@ -32,11 +34,14 @@ struct RoutinesListView: View {
         .sheet(isPresented: $isPresentingNewScrumView) {
             NewRoutineSheet(routines: $routines, isPresentingNewRoutineView: $isPresentingNewScrumView)
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
 struct RoutinesListView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutinesListView(routines: .constant(ProRoutine.sampleData))
+        RoutinesListView(routines: .constant(ProRoutine.sampleData), saveAction: {})
     }
 }

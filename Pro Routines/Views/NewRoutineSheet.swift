@@ -15,19 +15,19 @@ struct NewRoutineSheet: View {
     var body: some View {
         NavigationStack {
             RoutineConfigView(routine: $newRoutine)
-        }
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Dismiss") {
-                    isPresentingNewRoutineView = false
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Dismiss") {
+                            isPresentingNewRoutineView = false
+                        }
+                    }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Add") {
+                            routines.append(newRoutine)
+                            isPresentingNewRoutineView = false
+                        }
+                    }
                 }
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Add") {
-                    routines.append(newRoutine)
-                    isPresentingNewRoutineView = false
-                }
-            }
         }
     }
 }

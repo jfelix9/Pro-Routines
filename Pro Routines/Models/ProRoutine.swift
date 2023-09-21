@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProRoutine: Identifiable {
+struct ProRoutine: Identifiable, Codable {
     let id: UUID
     var title: String
     var tasks: [Task]
@@ -32,7 +32,7 @@ struct ProRoutine: Identifiable {
 }
 
 extension ProRoutine {
-    struct Task: Identifiable {
+    struct Task: Identifiable, Codable {
         let id: UUID
         var name: String
         

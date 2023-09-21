@@ -10,10 +10,26 @@ import SwiftUI
 @main
 struct Pro_RoutinesApp: App {
     @State private var routines = ProRoutine.sampleData
+    @StateObject private var store = Store()
     
     var body: some Scene {
         WindowGroup {
-            RoutinesListView(routines: $routines)
+            RoutinesListView(routines: $store.routines) {
+                Task {
+                    do {
+                        try await store.save(routines: store.routines)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+                .task {
+                    do {
+                        try await store.load()
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
         }
     }
 }
